@@ -1,4 +1,4 @@
-<!DOCTYPE HTML> 
+<!DOCTYPE PHP> 
 <html> 
 	<head> 
 		<meta charset='utf-8'>
@@ -22,23 +22,10 @@
 			</ul>
 		</div>
 		
-		<div id='LoginMenu'>
-			<ul> 
-				<span id="LoginPadding"> 
-					<form action="usersdb.php" method="post"> 
-						Email:
-						<br><input type="email" name="usermail" ></br> <br>
-						
-						Password:
-						<br><input type="password" name="Password" ></br><br>
-						
-						GameName:
-						<br><input type="gameName" name="GameName" ></br><br>
-						
-						<br><input type="submit" value="Login"></br>
-					</form>
-				</span>
-			</ul>
-		</div>
+		
+		
+		<?php
+			echo <p>"Hello World"</p>
+		?>
 	</body> 
 </html>
