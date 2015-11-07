@@ -20,7 +20,7 @@ class Player:
 			return True	
 	
 def main():
-	
+	print ("Hellow")
 	p1 = Player(self,"calvin","tacalvin@yahoo.com",p2,p3,"1",0,True)
 	p2 = Player(self,"bill","tacalvin@yahoo.com",p3,p1,"2",0,True)
 	p3 = Player(self,"joe","tacalvin@yahoo.com",p1,p2,"3",0,True)

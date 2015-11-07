@@ -1,14 +1,14 @@
 #! /usr/bin/python3
 class Player:
-	def __init__(self,name,email,target,killer,pin,kills,status):
+	def __init__(self,name,email,pin,kills,status):
 		self.status = status
 		self.name = name
 		self.email= email
-		self.target = target
-		self.killer = killer
 		self.pin = pin
 		self.kills = kills
-	
+	def addAssassins(killer,target):
+		self.killer = killer
+		self.target = target
 	def kill(pin,self,target):
 		if self.status == true:
 			target.die(pin,self)
@@ -19,10 +19,14 @@ class Player:
 			self.status = False
 			return True	
 	
-def main():
-	print ("Hellow")
-	p1 = Player(self,"calvin","tacalvin@yahoo.com",p2,p3,"1",0,True)
-	p2 = Player(self,"bill","tacalvin@yahoo.com",p3,p1,"2",0,True)
-	p3 = Player(self,"joe","tacalvin@yahoo.com",p1,p2,"3",0,True)
+
+print ("Hellow")
+p1 = Player(self,"calvin","tacalvin@yahoo.com","1",0,True)
+
+p2 = Player(self,"bill","tacalvin@yahoo.com","2",0,True)
+p3 = Player(self,"joe","tacalvin@yahoo.com","3",0,True)
+p1.addAssassins(p2,p3)
+p2.addAssassins(p3,p1)
+p3.addAssassins(p1,p2)
 	
-	p1.kill(p3.pin,self,p3)
+p1.kill(p3.pin,self,p3)
