@@ -11,7 +11,6 @@
 	</head> 
 	
 	<body> 
-		<body>
 
 		<div id='cssmenu'>
 			<ul>
@@ -25,16 +24,18 @@
 		<div id='LoginMenu'>
 			<ul> 
 				<span id="LoginPadding"> 
-					<label for="usermail">Email</label> 
-					<br><input type="email" name="usermail" ></br> <br>
-					
-					<label for="password">Password</label>
-					<br><input type="password" name="password" ></br><br>
-					
-					<label for="GameName">GameName</label>
-					<br><input type="GameName" name="GameName" ></br><br>
-					
-					<br><input type="submit" value="Login"></br>
+					<form action="usersdb.php" method="post"> 
+						Email:
+						<br><input type="email" name="usermail" ></br> <br>
+						
+						Password:
+						<br><input type="password" name="Password" ></br><br>
+						
+						GameName:
+						<br><input type="gameName" name="GameName" ></br><br>
+						
+						<br><input type="submit" value="Login"></br>
+					</form>
 				</span>
 			</ul>
 		</div>
