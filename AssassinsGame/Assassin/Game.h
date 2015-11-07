@@ -1,0 +1,19 @@
+#pragma once
+#include<iostream>
+#include<string>
+#include<vector>
+#include "Player.h"
+using namespace std;
+class Game
+{
+	public:
+	Game();
+	string createSession(string sessionName);
+	bool loadSession(string sessionName);
+	bool addPlayer(string sessionName);
+	~Game();
+
+	private:
+	vector<Player> PlayerList;
+};
+
