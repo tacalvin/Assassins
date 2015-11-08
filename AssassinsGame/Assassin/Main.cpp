@@ -16,10 +16,10 @@ int main(int argc, char* argv[])
 	{
 		game.targetSetup();
 		cout << "Works" << endl;
-		ofstream started;
+		/*ofstream started;
 		started.open("started.txt");
 		started << "Game started" << endl;
-		started.close();
+		started.close();*/
 	}
 	else if (arg == "login")
 	{
