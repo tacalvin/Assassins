@@ -7,6 +7,7 @@
 	   <link rel="stylesheet" href="main.css">
 	   <script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
 	   <script src="script.js"></script>
+
 	   <title>Registration Page</title>
 	</head> 
 	
@@ -21,55 +22,83 @@
 			   <li><a href='Contact.html'>Contact Us</a></li>
 			</ul>
 		</div>
-		
-<<<<<<< HEAD
-=======
-
->>>>>>> 0daeec9ea238bb5908029b51437190eff3900d2f
-		<div class='LoginMenu'>
+			
+			<button onclick="showLogin()">Login</button>
+			<button onclick="showRegister()">Register</button>
+			<button onclick="showKill()">Kill</button>
+		<div class='LoginMenu' id='login'>
 			<ul><h4> Login </h4></ul>
 			
 				<ul> 
 					<span id="LoginPadding"> 
 						<form action="post.php" method="POST">
-						<label for="emailInput">Please Enter Your Email:</label> 
-						<br><input type="text" name="email" ></br> <br>
-						
-						<label for="passwordInput">Please Enter Your Password:</label>
-						<br><input type="text" name="password" ></br><br>
-						
-						<input type="submit" name="login" value="Login"></br>
-						</form>
+						<label for="loginPinInput">Please Enter Your Pin:</label> 
+						<br><input type="text" name="loginpin" ></br> <br>
+						<input type="submit" name="action" value="login"></br>
 					</span>
 				</ul>
 		</div>
 		
 		</br>
-		<div class='LoginMenu'>
+		<div class='LoginMenu' id = 'register'>
 			<ul><h4> Register </h4></ul>
 				<ul> 
 					<span id="LoginPadding"> 
 						<form action="post.php" method="POST">
-						<label for="emailInput">Please Enter Your Name:</label> 
+						<label for="nameInput">Please Enter Your Name:</label> 
 						<br><input type="text" name="name" ></br> <br>
 						
-						<label for="passwordInput">Please Enter Your Email:</label>
-						<br><input type="text" name="email" ></br><br>
-
-						<label for="passwordInput">Please Create A Password:</label>
-						<br><input type="text" name="password" ></br><br>
+<!-- 						<label for="passwordInput">Please Enter Your Email:</label>
+						<br><input type="text" name="email" ></br><br> -->
 						
-						<input type="submit" name="register" value="Register"></br>
+						<input type="submit" name="action" value="register"></br>
 					</span>
 				</ul>
-<<<<<<< HEAD
-=======
 
->>>>>>> 0daeec9ea238bb5908029b51437190eff3900d2f
+		</div>
+
+		<div class='LoginMenu' id = 'kill'>
+			<ul><h4> Kill </h4></ul>
+				<ul> 
+					<span id="LoginPadding"> 
+						<form action="post.php" method="POST">
+						<label for="loginPinInput">Please Enter Your Pin:</label> 
+						<br><input type="text" name="loginPin" ></br> <br>
+						
+						<label for="targetPinInput">Please Enter Your Target's Pin:</label>
+						<br><input type="text" name="targetPin" ></br><br>
+						
+						<input type="submit" name="action" value="kill"></br>
+					</span>
+				</ul>
+
 		</div>
 		
 		<footer id="Foot">
 		  <p>By 2015 Hack Team: Calvin Ta, Michael Rusheen, Patrick Le</p>
 		</footer>
 	</body> 
+		   <script type="text/javascript">
+	   document.getElementById("login").style.display="none";
+	   document.getElementById("register").style.display="none";
+	   document.getElementById("kill").style.display="none";
+
+	   function showLogin(){
+		document.getElementById("login").style.display="block";
+		document.getElementById("register").style.display="none";
+		document.getElementById("kill").style.display="none";
+	   }
+
+	   function showRegister(){
+		document.getElementById("login").style.display="none";
+		document.getElementById("register").style.display="block";
+		document.getElementById("kill").style.display="none";
+	   }
+
+	   function showKill(){
+		document.getElementById("login").style.display="none";
+		document.getElementById("register").style.display="none";
+		document.getElementById("kill").style.display="block";
+	   }
+	   </script>
 </html>

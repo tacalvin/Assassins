@@ -10,35 +10,21 @@ ini_set('display_errors', 'on');
 $name = $_POST["name"];
 $email = $_POST["email"];
 $password = $_POST["password"];
-
-$pin = 1; // FIXME: generate random pin
+$kill = $_POST["kill"];
+if(!empty($_POST["password"])){
+	$pin = $_POST["password"];
+}
+else {
+	$pin = 0;
+}
 
 //Helps prevent SQL Injection Attacks
 //$name_es = sqlite_escape_string($name);
 //$email_es = sqlite_escape_string($email);
 if (!empty($name)) {
+	if ()
+	$args = "./a.out " . $pin . " " . $action . " " . $aux;
 
-    $dbhandle = new SQLite3('db/game1.db');
-
-   // Check if there is a table already
-	$val = $dbhandle->querySingle('select 1 from `game` LIMIT 1');
-	if($val !== FALSE)
-	{
- 	$dbhandle->exec('CREATE TABLE game (name TEXT, email TEXT, pin INTEGER)');
-	}
-   
-   if(!empty($name)){
-   	// User is registering
-   // Add new regestered player's info to the table
-   $stm = "INSERT INTO game (name, email, pin) VALUES('$name', '$email', '$pin')";
-   $dbhandle->exec($stm);
-	}
-	else {
-		// User is logging in, they want their pin
-		$yourpin = $dbhandle->querySingle("SELECT pin FROM game WHERE email='$email'");
-		echo "Your pin is: " . $yourpin;	
-		echo "<input type="submit" name="kill" value="Kill"></br>"
-	}
    // Thank user for logging in / registering
    	echo "Welcome " . $name;
 
