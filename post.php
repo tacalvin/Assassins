@@ -17,7 +17,7 @@ switch ($action):
 		$args = "./a.out " . $loginPin . " login";
 		break;
 	case "register":
-		$args = "./a.out " . $loginPin . "add " . $name;
+		$args = "./a.out 0 add " . $name;
 		break;
 	case "kill":
 		$args = "./a.out " . $loginPin . " kill " . $targetPin;
