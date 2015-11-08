@@ -232,3 +232,18 @@ table, th, td {
 #teamMates {
 	background-color: #90C3D4;
 }
+
+.images1 {
+    display: inline-block;
+	position: center; 
+}
+
+.images2 {
+    display: inline-block;
+	position: left;
+}
+
+.images3 {
+    display: inline-block;
+	position: right;
+}
