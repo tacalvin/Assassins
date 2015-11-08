@@ -9,7 +9,7 @@ class Game
 	public:
 	Game(string);
 	string createSession(string sessionName);
-	void loadSession(string sessionName);
+	void loadSession(string sessionName, int flag);
 	void addPlayer(Player* pl);
 	vector<Player*> getPlayerList();
 	int randomGen();

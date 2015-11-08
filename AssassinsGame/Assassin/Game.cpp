@@ -30,34 +30,87 @@ string Game::createSession(string sessionName)
 }
 
 
-void Game::loadSession(string sessionName)
+void Game::loadSession(string sessionName, int flag)
 {
-	ifstream game(sessionName + ".txt");
-	while (!game.eof())
+	//if flag == 1 game has started therefore text files have targets and killers
+
+	ifstream game(sessionName);
+	if (flag == 0)
 	{
-		string name;
-		getline(game, name, ',');
-		string email;
-		getline(game, email, ',');
-		string status;
-		getline(game, status, ',');
-		string pin;
-		getline(game, pin, ',');
-		string kills;
-		getline(game, kills, ',');
+		while (!game.eof())
+		{
+			string name;
+			getline(game, name, ',');
 
-		std::string::size_type sz;   // alias of size_t
+			string status;
+			getline(game, status, ',');
+			string pin;
+			getline(game, pin, ',');
+			string kills;
+			getline(game, kills, ',');
 
-		int kil = atoi(kills.c_str());
-		int piN = atoi(pin.c_str());
-		bool stat = false;
-		if (status == "true")
-			stat = true;
-			
-		Player* p = new Player(name, /*email,*/ stat, kil, piN);
-		PlayerList.push_back(p);
+			std::string::size_type sz;   // alias of size_t
+
+			int kil = atoi(kills.c_str());
+			int piN = atoi(pin.c_str());
+			bool stat = false;
+			if (status == "true")
+				stat = true;
+
+			Player* p = new Player(name, /*email,*/ stat, kil, piN);
+			PlayerList.push_back(p);
+		}
 	}
-	
+
+	if (flag == 1)
+	{
+		while (!game.eof())
+		{
+			string name;
+			getline(game, name, ',');
+
+			string status;
+			getline(game, status, ',');
+			string pin;
+			getline(game, pin, ',');
+			string kills;
+			getline(game, kills, ',');
+			string killPin;
+			getline(game, killPin, ',');
+			string targPin;
+			getline(game, targPin, ',');
+
+			std::string::size_type sz;   // alias of size_t
+
+			int kil = atoi(kills.c_str());
+			int piN = atoi(pin.c_str());
+			int kpin = atoi(killPin.c_str());
+			int tpin = atoi(targPin.c_str());
+			bool stat = false;
+			if (status == "true")
+				stat = true;
+
+			Player* p = new Player(name, /*email,*/ stat, kil, piN);
+			for (int i = 0; i < PlayerList.size(); ++i)
+			{
+				if (kpin == (*(*PlayerList.at(i)).getKiller()).getPin())
+				{
+					for (int j = 0; i < PlayerList.size(); ++j)
+					{
+						if (tpin == (*(*PlayerList.at(i)).getTarget()).getPin())
+						{
+							(*p).addAssassins(PlayerList.at(i), PlayerList.at(j));
+							break;
+						}
+					}
+					if ((*p).getKiller != nullptr || (*p).getTarget() != nullptr)
+						break;
+				}
+			}
+			
+			PlayerList.push_back(p);
+		}
+	}
 }
 
 void Game::addPlayer(Player* pl)
@@ -89,10 +142,29 @@ int Game::randomGen()
 Game::~Game()
 {
 	cout << "Program Terminated" << endl;
-	ofstream outfile;
-	outfile.open("game.txt");
-	outfile << "Game Data" << endl;
-	outfile.close();
+	ifstream game("game.txt");
+	
+	if (!game.fail())
+	{
+		ofstream outfile;
+		outfile.open("game.txt");
+		for (int i = 0; i < PlayerList.size(); ++i)
+		{
+			outfile << (*PlayerList.at(i)).getName() << ",";
+			if ((*PlayerList.at(i)).getStatus())
+				outfile << "true" << ",";
+			else
+				outfile << "false" << ",";
+			outfile << (*PlayerList.at(i)).getPin() << ",";
+			outfile << (*PlayerList.at(i)).getKills() << ",";
+
+			outfile << (*(*PlayerList.at(i)).getKiller()).getPin() << ",";
+			outfile << (*(*PlayerList.at(i)).getTarget()).getPin() << ",";
+			//killer then target
+
+		}
+		outfile.close();
+	}
 
 }
 

@@ -34,6 +34,10 @@ int main(int argc, char* argv[])
 
 		
 	}
+	else if (argv[1] == "start")
+	{
+		game.targetSetup();
+	}
 	else if (argv[2] == "kill")
 	{
 		int p = atoi(argv[1]);
