@@ -10,7 +10,7 @@ $loginPin = $_POST['loginPin'];
 $action = $_POST['action'];
 $kill = $_POST['kill'];
 $targetPin = $_POST['targetPin'];
-$start = $_GET('start');
+$start = $_POST['start'];
 
 switch ($action):
 	case "login":
