@@ -1,5 +1,6 @@
 #include <iostream>
 #include <string>
+#include <stdlib.h>
 #include "Game.h"
 using namespace std;
 
@@ -8,10 +9,41 @@ int main(int argc, char* argv[])
 	Game game = Game("game.txt");
 	//pin-self kill pin-enenmy
 	//pin-self add name
-	cout << argv[0] << endl;
-	cout << argv[1] << endl;
-	cout << argv[2] << endl;
-	cout << argv[3] << endl;
+	
+	if (argv[2] == "login")
+	{
+		int p = atoi(argv[1]);
+		for (int i = 0; i < game.getPlayerList().size(); ++i)
+		{
+			if (p == (*game.getPlayerList().at(i)).getPin())
+			{
+				cout << (*(*game.getPlayerList().at(i)).getTarget()).getName() << endl;
+
+			}
+		}
+	}
+	else if (argv[2] == "add")
+	{
+		string name = argv[3];
+		Player* p = new Player(name, true, 0, game.randomGen());
+		game.addPlayer(p);
+
+		
+	}
+	else if (argv[2] == "kill")
+	{
+		int p = atoi(argv[1]);
+		for (int i = 0; i < game.getPlayerList().size(); ++i)
+		{
+			if (p == (*game.getPlayerList().at(i)).getPin())
+			{
+				Player* target = (*game.getPlayerList().at(i)).getTarget();
+				(*game.getPlayerList().at(i)).kill(p, target);
+
+			}
+		}
+	}
+
 	/*switch(argv[2]) {
 		case static_cast<char*>("new"):
 			 Register this player

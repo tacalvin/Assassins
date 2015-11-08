@@ -8,7 +8,7 @@ class Player
 {
 	private:
 	string name;
-	string email;
+	//string email;
 	bool status;
 	int kills;
 	int pin;
@@ -17,15 +17,17 @@ class Player
 	Player* self = this;
 
 	public:
-	Player(string name, string email, bool status, int kills, int pin);
+	Player(string name, /*string email*/ bool status, int kills, int pin);
+	string getName();
 	bool getStatus();
 	int getPin();
 	int getKills();
 	Player* getTarget();
 	Player* getKiller();
 	void addAssassins(Player* killer, Player* target);
-	void kill(int pin, Player* killer, Player* target);
+	void kill(int pin, Player* target);
 	Player* die(int pin, Player* killer);
+	
 	
 
 

@@ -2,13 +2,18 @@
 
 
 
-Player::Player(string name, string email, bool status, int kills, int pin): email(""), status(1), kills(0)
+Player::Player(string name, /*string email,*/ bool status, int kills, int pin): /*email(""), */status(1), kills(0)
 {
 	(*this).name = name;
-	(*this).email = email;
+	//(*this).email = email;
 	(*this).status = status;
 	(*this).kills = kills;
 	(*this).pin = pin;
+}
+
+string Player::getName()
+{
+	return name;
 }
 
 bool Player::getStatus()
@@ -57,13 +62,15 @@ Player* Player::die(int playerpin, Player* actingkiller)
 		cout << "error invalid kill" << endl;
 }
 
-void Player::kill(int pin, Player* killer, Player* target)
+
+
+void Player::kill(int pin, Player* target)
 {	
 	
-	if ((*killer).getStatus())
+	if ((*this).getStatus())
 	{
 		cout << "Checking kill" << endl;
-		(*target).die(pin, killer);
+		(*target).die(pin, this);
 		
 	}
 }
