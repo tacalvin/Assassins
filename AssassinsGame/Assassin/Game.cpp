@@ -178,7 +178,6 @@ Game::~Game()
 	else
 	{
 		
-			cout << "Saving" << endl;
 			ofstream outfile;
 			outfile.open("game.txt");
 			for (int i = 0; i < PlayerList.size(); ++i)
@@ -203,8 +202,7 @@ Game::~Game()
 
 void Game::targetSetup()
 {
-	vector<bool> set = *new vector < bool>(PlayerList.size());
-
+	cout << PlayerList.size() << endl;
 	for (int i = 0; i < PlayerList.size(); ++i)
 	{
 		if (i != 0 && i != PlayerList.size())
