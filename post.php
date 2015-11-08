@@ -1,40 +1,33 @@
 <!DOCTYPE HTML> 
 <?php
-error_reporting(E_ALL);
-ini_set('display_errors', 'on');
 
-// Including the game logic
-//require 'GameManager.php';
+//error_reporting(E_ALL);
+//ini_set('display_errors', 'on');
+
 
 //Get data from submitted form
 $name = $_POST["name"];
-$email = $_POST["email"];
-$password = $_POST["password"];
-$kill = $_POST["kill"];
-if(!empty($_POST["password"])){
-	$pin = $_POST["password"];
-}
-else {
-	$pin = 0;
-}
+$loginPin = $_POST['loginPin'];
+$action = $_POST['action'];
+$kill = $_POST['kill'];
+$targetPin = $_POST['targetPin'];
 
-//Helps prevent SQL Injection Attacks
-//$name_es = sqlite_escape_string($name);
-//$email_es = sqlite_escape_string($email);
-if (!empty($name)) {
-	if ()
-	$args = "./a.out " . $pin . " " . $action . " " . $aux;
+switch ($action):
+	case "login":
+		$args = "./a.out " . $loginPin . " login";
+		break;
+	case "register":
+		$args = "./a.out " . $loginPin . "add " . $name;
+		break;
+	case "kill":
+		$args = "./a.out " . $loginPin . " kill " . $targetPin;
+		break;
+	endswitch;
 
-   // Thank user for logging in / registering
-   	echo "Welcome " . $name;
+$es_args = escapeshellcmd($args);
 
-   	// Helps with debugging :)
-	echo "You entered: " . $name . " " . $email . " " . $password;
-	
-	// They need to know their pin to play
-	$yourpin = $dbhandle->querySingle("SELECT pin FROM game WHERE email='$email'");
-	echo "Your pin is: " . $yourpin;
-}
+//echo $args;
+
 ?>
 
 <html> 
@@ -58,7 +51,7 @@ if (!empty($name)) {
 			   <li><a href='Registration.html'>Register</a></li>
 			</ul>
 		</div>
-
+		<?php echo shell_exec($es_args); ?>
 	</body>
 </html>
 
