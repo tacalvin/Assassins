@@ -17,13 +17,19 @@ Game::Game(string sessionName)
 	if(game.fail())
 	{
 		cout << "Error Game does not exist please contact system admin" << endl;
+		ofstream g;
+		g.open("game.txt");
+		g.close();
 	
 	}
-	ifstream started("started.txt");
-	if (started.fail())
-		loadSession(sessionName, 0);
 	else
-		loadSession(sessionName, 1);
+	{
+		ifstream started("started.txt");
+		if (started.fail())
+			loadSession(sessionName, 0);
+		else
+			loadSession(sessionName, 1);
+	}
 
 }
 

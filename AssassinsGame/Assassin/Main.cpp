@@ -10,8 +10,17 @@ int main(int argc, char* argv[])
 	Game game = Game("game.txt");
 	//pin-self kill pin-enenmy
 	//pin-self add name
-	
-	if (argv[2] == "login")
+	string start = argv[1];
+	string arg = argv[2];
+	cout << "choose" << endl;
+	if (start == "start")
+	{
+		game.targetSetup();
+		ofstream started;
+		started.open("started.txt");
+		started.close();
+	}
+	else if (arg == "login")
 	{
 		int p = atoi(argv[1]);
 		for (int i = 0; i < game.getPlayerList().size(); ++i)
@@ -27,7 +36,7 @@ int main(int argc, char* argv[])
 			}
 		}
 	}
-	else if (argv[2] == "add")
+	else if (arg == "add")
 	{
 		cout << "Adding" << endl;
 		string name = argv[3];
@@ -36,14 +45,8 @@ int main(int argc, char* argv[])
 
 		
 	}
-	else if (argv[1] == "start")
-	{
-		game.targetSetup();
-		ofstream started;
-		started.open("started.txt");
-		started.close();
-	}
-	else if (argv[2] == "kill")
+	
+	else if (arg == "kill")
 	{
 		int p = atoi(argv[1]);
 		for (int i = 0; i < game.getPlayerList().size(); ++i)
