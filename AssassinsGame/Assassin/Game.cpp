@@ -19,8 +19,11 @@ Game::Game(string sessionName)
 		cout << "Error Game does not exist please contact system admin" << endl;
 	
 	}
-
-	loadSession( sessionName);
+	ifstream started("started.txt");
+	if (started.fail())
+		loadSession(sessionName, 0);
+	else
+		loadSession(sessionName, 1);
 
 }
 
@@ -103,7 +106,7 @@ void Game::loadSession(string sessionName, int flag)
 							break;
 						}
 					}
-					if ((*p).getKiller != nullptr || (*p).getTarget() != nullptr)
+					if ((*p).getKiller() != nullptr || (*p).getTarget() != nullptr)
 						break;
 				}
 			}

@@ -1,4 +1,5 @@
 #include <iostream>
+#include <fstream>
 #include <string>
 #include <stdlib.h>
 #include "Game.h"
@@ -37,6 +38,9 @@ int main(int argc, char* argv[])
 	else if (argv[1] == "start")
 	{
 		game.targetSetup();
+		ofstream started;
+		started.open("started.txt");
+		started.close();
 	}
 	else if (argv[2] == "kill")
 	{
