@@ -21,35 +21,20 @@
 			</ul>
 		</div>
 		
-<<<<<<< HEAD
-		<div id='RegisterMenu'>
-			<ul> 
-				<span id="LoginPadding"> 
-					<form action="post.php" method="POST">
-					<label for="emailInput">Please Enter Your Name:</label> 
-					<br><input type="text" name="name" ></br> <br>
-					
-					<label for="passwordInput">Please Enter Your Email:</label>
-					<br><input type="text" name="email" ></br><br>
-					
-					<br><input type="submit" name="update" value="update"></br>
-					</form>
-				</span>
-			</ul>
-=======
+
 		<div class='LoginMenu'>
 			<ul><h4> Login </h4></ul>
 			
 				<ul> 
 					<span id="LoginPadding"> 
 						<form action="post.php" method="POST">
-						<label for="emailInput">Please Enter Your Name:</label> 
-						<br><input type="text" name="name" ></br> <br>
+						<label for="emailInput">Please Enter Your Email:</label> 
+						<br><input type="text" name="email" ></br> <br>
 						
-						<label for="passwordInput">Please Enter Your Email:</label>
-						<br><input type="text" name="email" ></br><br>
+						<label for="passwordInput">Please Enter Your Password:</label>
+						<br><input type="text" name="password" ></br><br>
 						
-						<input type="submit" name="update" value="Login"></br>
+						<input type="submit" name="login" value="Login"></br>
 						</form>
 					</span>
 				</ul>
@@ -60,16 +45,20 @@
 			<ul><h4> Register </h4></ul>
 				<ul> 
 					<span id="LoginPadding"> 
+						<form action="post.php" method="POST">
 						<label for="emailInput">Please Enter Your Name:</label> 
-						<br><input type="email" name="usermail" ></br> <br>
+						<br><input type="text" name="name" ></br> <br>
 						
 						<label for="passwordInput">Please Enter Your Email:</label>
-						<br><input type="password" name="password" ></br><br>
+						<br><input type="text" name="email" ></br><br>
+
+						<label for="passwordInput">Please Create A Password:</label>
+						<br><input type="text" name="password" ></br><br>
 						
-						<input type="submit" value="Register"></br>
+						<input type="submit" name="register" value="Register"></br>
 					</span>
 				</ul>
->>>>>>> e411df650840ea6071fc8d5e978885e2afe1d0a8
+
 		</div>
 	</body> 
 </html>
