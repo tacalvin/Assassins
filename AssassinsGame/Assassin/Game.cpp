@@ -88,6 +88,12 @@ int Game::randomGen()
 
 Game::~Game()
 {
+	cout << "Program Terminated" << endl;
+	ofstream outfile;
+	outfile.open("game.txt");
+	outfile << "Game Data" << endl;
+	outfile.close();
+
 }
 
 void Game::targetSetup()

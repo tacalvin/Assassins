@@ -17,7 +17,11 @@ int main(int argc, char* argv[])
 		{
 			if (p == (*game.getPlayerList().at(i)).getPin())
 			{
-				cout << (*(*game.getPlayerList().at(i)).getTarget()).getName() << endl;
+				if ((*game.getPlayerList().at(i)).getTarget() != nullptr)
+					cout << (*(*game.getPlayerList().at(i)).getTarget()).getName() << endl;
+
+				else
+					cout << "Game has not started" << endl;
 
 			}
 		}
@@ -43,6 +47,9 @@ int main(int argc, char* argv[])
 			}
 		}
 	}
+
+
+	game.~Game();
 
 	/*switch(argv[2]) {
 		case static_cast<char*>("new"):
