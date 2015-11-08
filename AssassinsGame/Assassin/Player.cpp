@@ -2,10 +2,9 @@
 
 
 
-Player::Player(string name, string email, bool status, int kills, int pin)
+Player::Player( bool status, int kills, int pin)
 {
-	(*this).name = name;
-	(*this).email = email;
+	
 	(*this).status = status;
 	(*this).kills = kills;
 	(*this).pin = pin;

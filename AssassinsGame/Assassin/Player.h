@@ -17,7 +17,7 @@ class Player
 	Player* self = this;
 
 	public:
-	Player(string name, string email, bool status, int kills, int pin);
+	Player( bool status, int kills, int pin);
 	bool getStatus();
 	int getPin();
 	int getKills();

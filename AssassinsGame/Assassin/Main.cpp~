@@ -1,0 +1,14 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main()
+{
+	
+	
+	cout << "Welcome to Assassins Game Manager" << endl;
+	cout << "Please Enter Game Name" << endl;
+	string gameName;
+	cin >> gameName;
+	return 0;
+}

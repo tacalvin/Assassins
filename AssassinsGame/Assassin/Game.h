@@ -7,10 +7,10 @@ using namespace std;
 class Game
 {
 	public:
-	Game();
+	Game(string);
 	string createSession(string sessionName);
 	bool loadSession(string sessionName);
-	bool addPlayer(string sessionName);
+	bool addPlayer(Player pl);
 	~Game();
 
 	private:

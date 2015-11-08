@@ -1,10 +1,15 @@
 #include "Game.h"
+#include <fstream>
+
+using namespace std;
 
 
 
 
-Game::Game()
+Game::Game(string sessionName)
 {
+	ifstream game(sessionName + ".txt");
+	if(game.
 }
 
 string Game::createSession(string sessionName)
@@ -17,7 +22,7 @@ bool Game::loadSession(string sessionName)
 	return false;
 }
 
-bool Game::addPlayer(string sessionName)
+bool Game::addPlayer(Player pl)
 {
 	return false;
 }
