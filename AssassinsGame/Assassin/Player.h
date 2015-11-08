@@ -25,7 +25,7 @@ class Player
 	Player* getTarget();
 	Player* getKiller();
 	void addAssassins(Player* killer, Player* target);
-	void kill(int pin, Player* killer, Player* target);
+	void kill(int pin, Player* target);
 	Player* die(int pin, Player* killer);
 	
 	

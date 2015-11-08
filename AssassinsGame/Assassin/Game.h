@@ -14,6 +14,7 @@ class Game
 	vector<Player*> getPlayerList();
 	int randomGen();
 	~Game();
+	void targetSetup();
 
 	private:
 	vector<Player*> PlayerList;

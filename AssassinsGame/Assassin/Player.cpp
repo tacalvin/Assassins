@@ -64,13 +64,13 @@ Player* Player::die(int playerpin, Player* actingkiller)
 
 
 
-void Player::kill(int pin, Player* killer, Player* target)
+void Player::kill(int pin, Player* target)
 {	
 	
-	if ((*killer).getStatus())
+	if ((*this).getStatus())
 	{
 		cout << "Checking kill" << endl;
-		(*target).die(pin, killer);
+		(*target).die(pin, this);
 		
 	}
 }

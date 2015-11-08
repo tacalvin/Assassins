@@ -21,6 +21,7 @@ Game::Game(string sessionName)
 	}
 
 	loadSession( sessionName);
+
 }
 
 string Game::createSession(string sessionName)
@@ -28,7 +29,7 @@ string Game::createSession(string sessionName)
 	return sessionName;
 }
 
-//
+
 void Game::loadSession(string sessionName)
 {
 	ifstream game(sessionName + ".txt");
@@ -87,4 +88,21 @@ int Game::randomGen()
 
 Game::~Game()
 {
+}
+
+void Game::targetSetup()
+{
+	vector<bool> set = *new vector < bool>(PlayerList.size());
+
+	for (int i = 0; i < PlayerList.size(); ++i)
+	{
+		if (i != 0 && i != PlayerList.size())
+		(*PlayerList.at(i)).addAssassins(PlayerList.at(i - 1), PlayerList.at(i + 1));
+
+		else if(i==0)
+			(*PlayerList.at(i)).addAssassins(PlayerList.at(PlayerList.size()-1), PlayerList.at(i + 1));
+		else if(i == PlayerList.size()-1)
+			(*PlayerList.at(i)).addAssassins(PlayerList.at(PlayerList.size() - 2), PlayerList.at(0));
+	}
+
 }
