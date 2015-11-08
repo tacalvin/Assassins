@@ -12,7 +12,6 @@ using namespace std;
 Game::Game(string sessionName)
 {
 	srand(time(0));
-	cout << "generate game" << endl;
 	ifstream game(sessionName);
 	if(game.fail())
 	{
@@ -26,7 +25,6 @@ Game::Game(string sessionName)
 		if (started.fail())
 		{
 			loadSession(sessionName, 0);
-			cout << "generate game" << endl;
 		}
 		else
 			loadSession(sessionName, 1);
@@ -48,7 +46,6 @@ void Game::loadSession(string sessionName, int flag)
 	cout << flag << endl;
 	if (flag == 0)
 	{
-		cout << "reached load" << endl;
 		while (!game.eof())
 		{
 			string name;
@@ -185,6 +182,7 @@ Game::~Game()
 			outfile.open("game.txt");
 			for (int i = 0; i < PlayerList.size(); ++i)
 			{
+				
 				outfile << (*PlayerList.at(i)).getName() << ",";
 				if ((*PlayerList.at(i)).getStatus())
 					outfile << "true" << ",";
