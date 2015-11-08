@@ -170,7 +170,6 @@ Game::~Game()
 			//killer then target
 
 		}
-		outfile << endl;
 		outfile.close();
 	}
 	else

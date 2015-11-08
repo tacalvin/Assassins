@@ -55,7 +55,6 @@ int main(int argc, char* argv[])
 		Player* p = new Player(name, true, 0, pin);
 		cout << "reached" << endl;
 		game.addPlayer(p);
-		cout << "reached" << endl;
 
 		
 	}
