@@ -4,13 +4,13 @@
 //error_reporting(E_ALL);
 //ini_set('display_errors', 'on');
 
-
 //Get data from submitted form
 $name = $_POST["name"];
 $loginPin = $_POST['loginPin'];
 $action = $_POST['action'];
 $kill = $_POST['kill'];
 $targetPin = $_POST['targetPin'];
+$start = $_GET('start');
 
 switch ($action):
 	case "login":
@@ -23,6 +23,10 @@ switch ($action):
 		$args = "./a.out " . $loginPin . " kill " . $targetPin;
 		break;
 	endswitch;
+
+if ($start == "true") {
+	$args = "./a.out start";
+}
 
 $es_args = escapeshellcmd($args);
 
