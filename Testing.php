@@ -1,4 +1,4 @@
-<!DOCTYPE PHP> 
+
 <html> 
 	<head> 
 		<meta charset='utf-8'>
@@ -25,7 +25,7 @@
 		
 		
 		<?php
-			echo <p>"Hello World"</p>
+			echo "Hello Wolrd";
 		?>
 	</body> 
 </html>

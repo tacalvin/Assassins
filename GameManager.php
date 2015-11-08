@@ -1,3 +1,4 @@
+<DOCTYPE PHP> 
 <html> 
 	<head> 
 		<title> PHP GAME MANAGER </title> 
@@ -5,7 +6,7 @@
 	
 	<body> 
 		<?php
-			
+			echo "Hello World";
 		?>
 	</body> 
 </html> 
