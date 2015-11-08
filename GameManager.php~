@@ -15,7 +15,7 @@
 				public $killer;
 				public $target;
 				
-				public function __construct($name,$email,$pin,$kills,$status,$killer,$target)
+				public function __construct($name,$email,$pin,$kills,$status)
 				{
 					$this->name = $name;
 					$this->email = $email;
@@ -82,6 +82,8 @@ public function die($playerpin, &$actingkiller)
 				
 				}
 			}
+			$Player = Player("Calvin","cta003@ucr.edu",1,0,true);
+			echo $Player->name;
 		?>
 
 	</body> 
