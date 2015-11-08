@@ -220,3 +220,15 @@ table, th, td {
     border: 1px solid black;
 	border-collapse: collapse;
 }
+
+#Foot { 
+	width: auto;
+	background-color: #dff2fa;
+	border: 1px solid  #dff2fa;
+	font-family: Raleway, sans-serif;
+	line-height: 1;
+}
+
+#teamMates {
+	background-color: #90C3D4;
+}
