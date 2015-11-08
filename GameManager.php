@@ -47,7 +47,31 @@ public function die($playerpin, &$actingkiller)
 					}
 				}
 			}
+			
+			class GameManager
+			{
+				public $PlayerList;
+				public $CurrentGameName;
+				
+				public function loadPlayers($gameName)
+				{
+				
+				}
+				public function addPlayer($Player)
+				{
+				
+				}
+				public function start()
+				{
+				//assigns targets
+				}
+				public function save()
+				{
+				
+				}
+			}
 		?>
+
 	</body> 
 </html> 
 

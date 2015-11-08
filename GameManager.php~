@@ -41,7 +41,7 @@ public function die($playerpin, &$actingkiller)
 	
 					if ($killer->status)
 					{
-					print "checking kill"
+					print "checking kill";
 					$target->die($pin, $killer);
 		
 					}
