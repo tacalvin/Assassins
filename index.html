@@ -7,37 +7,52 @@
 	   <link rel="stylesheet" href="main.css">
 	   <script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
 	   <script src="script.js"></script>
-	   <title>HomePage</title>
+	   <title>Registration Page</title>
 	</head> 
 	
 	<body> 
+		<body>
 
 		<div id='cssmenu'>
 			<ul>
 			   <li class='active'><a href='index.html'>Home</a></li>
 			   <li><a href='AboutGame.html'>About Game</a></li>
 			   <li><a href='AboutHackTeam.html'>About Hack Team</a></li>
-			   <li><a href='Registration.html'>Register</a></li>
 			</ul>
 		</div>
 		
-		<div id='LoginMenu'>
-			<ul> 
-				<span id="LoginPadding"> 
-					<form action="usersdb.php" method="post"> 
-						Email:
+		<div class='LoginMenu'>
+			<ul><h4> Login </h4></ul>
+			
+				<ul> 
+					<span id="LoginPadding"> 
+						<form action="post.php" method="POST">
+						<label for="emailInput">Please Enter Your Name:</label> 
+						<br><input type="text" name="name" ></br> <br>
+						
+						<label for="passwordInput">Please Enter Your Email:</label>
+						<br><input type="text" name="email" ></br><br>
+						
+						<input type="submit" name="update" value="Login"></br>
+						</form>
+					</span>
+				</ul>
+		</div>
+		
+		</br>
+		<div class='LoginMenu'>
+			<ul><h4> Register </h4></ul>
+				<ul> 
+					<span id="LoginPadding"> 
+						<label for="emailInput">Please Enter Your Name:</label> 
 						<br><input type="email" name="usermail" ></br> <br>
 						
-						Password:
-						<br><input type="password" name="Password" ></br><br>
+						<label for="passwordInput">Please Enter Your Email:</label>
+						<br><input type="password" name="password" ></br><br>
 						
-						GameName:
-						<br><input type="gameName" name="GameName" ></br><br>
-						
-						<br><input type="submit" value="Login"></br>
-					</form>
-				</span>
-			</ul>
+						<input type="submit" value="Register"></br>
+					</span>
+				</ul>
 		</div>
 	</body> 
 </html>
