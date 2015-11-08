@@ -22,17 +22,21 @@ int main(int argc, char* argv[])
 	}
 	else if (arg == "login")
 	{
-		int p = atoi(argv[1]);
-		for (int i = 0; i < game.getPlayerList().size(); ++i)
+		ifstream start("started");
+		if (!start.fail())
 		{
-			if (p == (*game.getPlayerList().at(i)).getPin())
+			int p = atoi(argv[1]);
+			for (int i = 0; i < game.getPlayerList().size(); ++i)
 			{
-				if ((*game.getPlayerList().at(i)).getTarget() != nullptr)
-					cout << (*(*game.getPlayerList().at(i)).getTarget()).getName() << endl;
+				if (p == (*game.getPlayerList().at(i)).getPin())
+				{
+					if ((*game.getPlayerList().at(i)).getTarget() != nullptr)
+						cout << (*(*game.getPlayerList().at(i)).getTarget()).getName() << endl;
 
-				else
-					cout << "Game has not started" << endl;
+					else
+						cout << "Game has not started" << endl;
 
+				}
 			}
 		}
 	}
@@ -40,8 +44,11 @@ int main(int argc, char* argv[])
 	{
 		cout << "Adding" << endl;
 		string name = argv[3];
+		cout << "Adding" << endl;
 		Player* p = new Player(name, true, 0, game.randomGen());
+		cout << "Adding" << endl;
 		game.addPlayer(p);
+		cout << "Adding" << endl;
 
 		
 	}
@@ -61,7 +68,6 @@ int main(int argc, char* argv[])
 	}
 
 
-	game.~Game();
 
 	/*switch(argv[2]) {
 		case static_cast<char*>("new"):

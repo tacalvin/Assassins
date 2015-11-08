@@ -151,7 +151,7 @@ int Game::randomGen()
 Game::~Game()
 {
 	cout << "Program Terminated" << endl;
-	ifstream game("game.txt");
+	ifstream game("started.txt");
 	
 	if (!game.fail())
 	{
