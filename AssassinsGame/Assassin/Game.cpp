@@ -155,6 +155,7 @@ Game::~Game()
 	
 	if (!game.fail())
 	{
+		cout << "Saving" << endl;
 		ofstream outfile;
 		outfile.open("game.txt");
 		for (int i = 0; i < PlayerList.size(); ++i)
@@ -173,6 +174,29 @@ Game::~Game()
 
 		}
 		outfile.close();
+	}
+	else
+	{
+		
+			cout << "Saving" << endl;
+			ofstream outfile;
+			outfile.open("game.txt");
+			for (int i = 0; i < PlayerList.size(); ++i)
+			{
+				outfile << (*PlayerList.at(i)).getName() << ",";
+				if ((*PlayerList.at(i)).getStatus())
+					outfile << "true" << ",";
+				else
+					outfile << "false" << ",";
+				outfile << (*PlayerList.at(i)).getPin() << ",";
+				outfile << (*PlayerList.at(i)).getKills() << ",";
+
+				
+				//killer then target
+
+			}
+			outfile.close();
+		
 	}
 
 }
