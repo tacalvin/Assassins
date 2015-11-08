@@ -11,6 +11,7 @@ int main(int argc, char* argv[])
 	cout << argv[0] << endl;
 	cout << argv[1] << endl;
 	cout << argv[2] << endl;
+	cout << argv[3] << endl;
 	/*switch(argv[2]) {
 		case static_cast<char*>("new"):
 			 Register this player
