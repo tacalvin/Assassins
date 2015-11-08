@@ -29,6 +29,7 @@ int main(int argc, char* argv[])
 	}
 	else if (argv[2] == "add")
 	{
+		cout << "Adding" << endl;
 		string name = argv[3];
 		Player* p = new Player(name, true, 0, game.randomGen());
 		game.addPlayer(p);
