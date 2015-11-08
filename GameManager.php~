@@ -15,14 +15,6 @@
 				public $killer;
 				public $target;
 				
-				public function __construct($name,$email,$pin,$kills,$status,$killer,$target)
-				{
-					$this->name = $name;
-					$this->email = $email;
-					$this->pin = $pin;
-					$this->kills =$kills;
-					$this->status = $status;
-				}
 public function addAssassins(&$killer, &$target)
 {
 	
@@ -63,15 +55,11 @@ public function die($playerpin, &$actingkiller)
 				
 				public function loadPlayers($gameName)
 				{
-					$Playerdata = str_getcsv($CsvString, "\n"); //parse the rows
-					foreach($Playerdata as &$Row) {
-					$Row = str_getcsv($Row, ";"); //parse the items in rows 
-					echo $Row;
-					}
+				
 				}
 				public function addPlayer($Player)
 				{
-					
+				
 				}
 				public function start()
 				{
