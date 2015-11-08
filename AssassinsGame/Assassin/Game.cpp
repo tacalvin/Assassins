@@ -14,18 +14,15 @@ Game::Game(string sessionName)
 	srand(time(0));
 
 	ifstream game(sessionName);
-	if(game.fail())
+
+	if (!game.fail())
 	{
-		cout << "Error Game does not exist please contact system admin" << endl;
-		ofstream g;
-		g.open("game.txt");
-		g.close();
-	
+
 	}
 	else
 	{
 		ifstream started("started.txt");
-		if (started.fail())
+		if (!started.fail())
 			loadSession(sessionName, 0);
 		else
 			loadSession(sessionName, 1);
@@ -173,6 +170,7 @@ Game::~Game()
 			//killer then target
 
 		}
+		outfile << endl;
 		outfile.close();
 	}
 	else
@@ -182,6 +180,7 @@ Game::~Game()
 			outfile.open("game.txt");
 			for (int i = 0; i < PlayerList.size(); ++i)
 			{
+				
 				outfile << (*PlayerList.at(i)).getName() << ",";
 				if ((*PlayerList.at(i)).getStatus())
 					outfile << "true" << ",";
@@ -205,7 +204,7 @@ void Game::targetSetup()
 	cout << PlayerList.size() << endl;
 	for (int i = 0; i < PlayerList.size(); ++i)
 	{
-		if (i != 0 && i != PlayerList.size())
+		if (i != 0 && i != PlayerList.size()-2)
 		(*PlayerList.at(i)).addAssassins(PlayerList.at(i - 1), PlayerList.at(i + 1));
 
 		else if(i==0)

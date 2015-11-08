@@ -10,16 +10,16 @@ int main(int argc, char* argv[])
 	Game game = Game("game.txt");
 	//pin-self kill pin-enenmy
 	//pin-self add name
-	string start = argv[2];
+	
 	string arg = argv[2];
-	if (start == "start")
+	if (arg == "start")
 	{
 		game.targetSetup();
 		cout << "Works" << endl;
-		/*ofstream started;
+		ofstream started;
 		started.open("started.txt");
 		started << "Game started" << endl;
-		started.close();*/
+		started.close();
 	}
 	else if (arg == "login")
 	{
@@ -47,10 +47,15 @@ int main(int argc, char* argv[])
 	else if (arg == "add")
 	{
 		string name = argv[3];
+		cout << "reached" << endl;
 		int pin = game.randomGen();
+		cout << "reached" << endl;
 		cout << pin << endl;
+		cout << "reached" << endl;
 		Player* p = new Player(name, true, 0, pin);
+		cout << "reached" << endl;
 		game.addPlayer(p);
+		cout << "reached" << endl;
 
 		
 	}
