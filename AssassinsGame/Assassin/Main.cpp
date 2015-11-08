@@ -5,27 +5,29 @@ using namespace std;
 
 int main(int argc, char* argv[])
 {
-	Game game = new Game("game.txt");
+	Game game = Game("game.txt");
 	//pin-self kill pin-enenmy
 	//pin-self add name
-
-	switch(argv[2]) {
-		case "new":
-			// Register this player
-		game.addPlayer(argv[3],"",1,0,randPin());
+	cout << argv[0] << endl;
+	cout << argv[1] << endl;
+	cout << argv[2] << endl;
+	/*switch(argv[2]) {
+		case static_cast<char*>("new"):
+			 Register this player
+		game.addPlayer(new string(argv[3]),"",1,0,randPin());
 			break;
-		case "login":
-			// Cout the player's target
+		case static_cast<char*>("login"):
+			 Cout the player's target
 	
 			break;
-		case "kill":
-			// argv[1] is the killer's pin
-			// argv[2] is the target's pin
+		case static_cast<char*>("kill"):
+			 argv[1] is the killer's pin
+			 argv[2] is the target's pin
 			break;
-		case default:
-			// Something went horribly wrong...
-			return -1;
-	}
+		default:
+			 Something went horribly wrong...
+			return -1;*/
+	//}
 	
 	
 	
@@ -37,4 +39,4 @@ int main(int argc, char* argv[])
 	}
 	
 	
-}
+
