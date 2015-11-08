@@ -2,7 +2,7 @@
 #include <fstream>
 #include <string>
 #include <vector>
-
+#include <stdlib.h>
 using namespace std;
 
 
@@ -10,7 +10,7 @@ using namespace std;
 
 Game::Game(string sessionName)
 {
-	ifstream game(sessionName + ".txt");
+	ifstream game(sessionName);
 	if(game.fail())
 	{
 		cout << "Error Game does not exist please contact system admin" << endl;
@@ -44,8 +44,8 @@ void Game::loadSession(string sessionName)
 
 		std::string::size_type sz;   // alias of size_t
 
-		int kil = std::stoi(kills, &sz);
-		int piN = std::stoi(pin, &sz);
+		int kil = atoi(kills.c_str());
+		int piN = atoi(pin.c_str());
 		bool stat = false;
 		if (status == "true")
 			stat = true;
