@@ -30,7 +30,7 @@ public function addAssassins(&$killer, &$target)
 	$this->killer = $killer;
 }
 
-public function die($playerpin, &$actingkiller)
+public function dies($playerpin, &$actingkiller)
 {
 	if ($this->pin == playerpin && $this->getKiller() == actingkiller)
 	{
@@ -50,7 +50,7 @@ public function die($playerpin, &$actingkiller)
 					if ($killer->status)
 					{
 					print "checking kill";
-					$target->die($pin, $killer);
+					$target->dies($pin, $killer);
 		
 					}
 				}

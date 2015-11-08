@@ -83,7 +83,7 @@ public function die($playerpin, &$actingkiller)
 				}
 			}
 			$Player = Player("Calvin","cta003@ucr.edu",1,0,true);
-			echo $Player->name;
+			echo "Test";
 		?>
 
 	</body> 
