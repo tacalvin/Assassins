@@ -12,21 +12,22 @@ using namespace std;
 Game::Game(string sessionName)
 {
 	srand(time(0));
-
+	cout << "generate game" << endl;
 	ifstream game(sessionName);
 	if(game.fail())
 	{
 		cout << "Error Game does not exist please contact system admin" << endl;
-		ofstream g;
-		g.open("game.txt");
-		g.close();
+
 	
 	}
 	else
 	{
 		ifstream started("started.txt");
 		if (started.fail())
+		{
 			loadSession(sessionName, 0);
+			cout << "generate game" << endl;
+		}
 		else
 			loadSession(sessionName, 1);
 	}
@@ -44,8 +45,10 @@ void Game::loadSession(string sessionName, int flag)
 	//if flag == 1 game has started therefore text files have targets and killers
 
 	ifstream game(sessionName);
+	cout << flag << endl;
 	if (flag == 0)
 	{
+		cout << "reached load" << endl;
 		while (!game.eof())
 		{
 			string name;
@@ -71,7 +74,7 @@ void Game::loadSession(string sessionName, int flag)
 		}
 	}
 
-	if (flag == 1)
+	else if (flag == 1)
 	{
 		while (!game.eof())
 		{
@@ -205,7 +208,7 @@ void Game::targetSetup()
 	cout << PlayerList.size() << endl;
 	for (int i = 0; i < PlayerList.size(); ++i)
 	{
-		if (i != 0 && i != PlayerList.size())
+		if (i != 0 && i != PlayerList.size()-2)
 		(*PlayerList.at(i)).addAssassins(PlayerList.at(i - 1), PlayerList.at(i + 1));
 
 		else if(i==0)
